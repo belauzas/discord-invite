@@ -35,7 +35,6 @@ body[data-theme='dark'] {
 }
 .left {
     background-color: var(--grey-color);
-    /* box-shadow: 0 0 8px #0004; */
     border-right: 1px solid #0002;
 }
 .right {
@@ -46,6 +45,7 @@ body[data-theme='dark'] {
     font-weight: bold;
     font-size: 40px;
     line-height: 1em;
+    color: #36f;
 }
 
 .main-title {
@@ -102,6 +102,10 @@ body[data-theme='dark'] {
 .card .question > input {
     padding: 0.3em 0.1em;
     font-size: 24px;
+    background-color: var(--secondary-color);
+    border: none;
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
 }
 .card .question > .comment {
     font-size: 16px;

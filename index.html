@@ -28,17 +28,43 @@
                 <div class="title">Pagrindiniai klausimai</div>
                 <div class="questions">
                     <div class="question">
-                        <div class="label">Kuo vardu?</div>
+                        <label for="name" class="label">Kuo vardu?</label>
                         <input id="name" type="text">
                         <div class="comment">Tikras vardas, bet ne pravardės ar pan.</div>
                     </div>
                     <div class="question">
-                        <div class="label">Ar turi Github paskyrą?</div>
+                        <div class="label">Koks tavo tikslas?</div>
+                        <div class="radio-list">
+                            <div class="option">
+                                <input type="radio" name="goal" id="goal-begin">
+                                <label for="goal-begin">Mokytis programavimo</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="goal" id="goal-teach">
+                                <label for="goal-teach">Padėti kitiems mokytis programavimo</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <div class="label">Kokia tavo pažanga programavime?</div>
+                        <div class="radio-list">
+                            <div class="option">
+                                <input type="radio" name="goal" id="goal-begin">
+                                <label for="goal-begin">Mokytis programavimo</label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="goal" id="goal-teach">
+                                <label for="goal-teach">Padėti kitiems mokytis programavimo</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <label class="label">Ar turi Github paskyrą?</label>
                         <input id="github-username" type="text">
                         <div class="comment">Jei taip - įrašyk pilną nuorodą į savo Github paskyrą. Pvz.: https://github.com/slapyvardis</div>
                     </div>
                     <div class="question">
-                        <div class="label">Ar turi Linkedin paskyrą?</div>
+                        <label class="label">Ar turi Linkedin paskyrą?</label>
                         <input id="linkedin-username" type="text">
                         <div class="comment">Jei taip - įrašyk pilną nuorodą į savo Linkedin paskyrą. Pvz.: https://www.linkedin.com/in/vardenispavardenis/</div>
                     </div>
