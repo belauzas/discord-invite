@@ -1,5 +1,6 @@
 :root {
     --main-color: #000;
+    --main-color-2: #0002;
     --secondary-color: #fff;
     --grey-color: #eee;
 }
@@ -13,9 +14,7 @@ body * {
 }
 
 body {
-    display: grid;
     min-height: 100vh;
-    grid-template-columns: 600px 1fr;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
         sans-serif;
     background-color: var(--secondary-color);
@@ -23,6 +22,7 @@ body {
 }
 body[data-theme='dark'] {
     --main-color: #fff;
+    --main-color-2: #fff1;
     --secondary-color: #111;
     --grey-color: #000;
 }
@@ -34,11 +34,18 @@ body[data-theme='dark'] {
     padding: 60px;
 }
 .left {
+    width: 600px;
+    height: 100vh;
     background-color: var(--grey-color);
     border-right: 1px solid #0002;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 .right {
-    padding: 60px;
+    float: right;
+    width: calc(100% - 600px);
+    padding: 60px 60px 240px;
 }
 
 .logo {
@@ -78,36 +85,92 @@ body[data-theme='dark'] {
     border-bottom: 2px solid;
 }
 
-.card {
+.content {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 80px;
 }
-.card > .title {
-    font-size: 32px;
+.title {
+    font-size: 44px;
 }
-.card > .questions {
+.questions {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 80px;
 }
-.card > .questions > .question {
+.questions > .question {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    max-width: 700px;
 }
-.card .question > .label {
-    font-size: 24px;
+.question > .label {
+    font-size: 32px;
 }
-.card .question > input {
-    padding: 0.3em 0.1em;
+.question > input,
+.question > textarea {
+    width: 100%;
+    padding: 0.3em;
     font-size: 24px;
+    line-height: 1em;
     background-color: var(--secondary-color);
-    border: none;
     color: var(--main-color);
+    border: 1px solid var(--main-color-2);
     border-bottom: 2px solid var(--main-color);
 }
-.card .question > .comment {
+.question > textarea {
+    min-height: 2.6em;
+    height: 3.6em;
+    max-height: 8.6em;
+    resize: vertical;
+}
+.question > .comment {
     font-size: 16px;
     font-style: italic;
+}
+.question a {
+    color: #36f;
+}
+
+.continue {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.continue .btn {
+    font-size: 24px;
+    padding: 0.5em 1em;
+    background-color: #36f;
+    color: #fff;
+    border: none;
+    border-radius: 0.15em;
+    position: relative;
+    cursor: pointer;
+}
+.continue .btn::after {
+    font-size: inherit;
+    line-height: inherit;
+    content: '✅';
+    margin-left: 0.5em;
+}
+.continue.disabled .btn {
+    cursor: no-drop;
+}
+.continue.disabled .btn::after {
+    content: '⛔';
+}
+.continue .comment {
+    display: none;
+}
+.continue.disabled .comment {
+    display: block;
+}
+
+@media (max-width: 1400px) {
+    .left {
+        width: 500px;
+    }
+    .right {
+        width: calc(100% - 500px);
+    }
 }

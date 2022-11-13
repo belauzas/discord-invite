@@ -24,50 +24,43 @@
             </div>
         </div>
         <div class="content">
-            <div class="card">
-                <div class="title">Pagrindiniai klausimai</div>
-                <div class="questions">
-                    <div class="question">
-                        <label for="name" class="label">Kuo vardu?</label>
-                        <input id="name" type="text">
-                        <div class="comment">Tikras vardas, bet ne pravardės ar pan.</div>
-                    </div>
-                    <div class="question">
-                        <div class="label">Koks tavo tikslas?</div>
-                        <div class="radio-list">
-                            <div class="option">
-                                <input type="radio" name="goal" id="goal-begin">
-                                <label for="goal-begin">Mokytis programavimo</label>
-                            </div>
-                            <div class="option">
-                                <input type="radio" name="goal" id="goal-teach">
-                                <label for="goal-teach">Padėti kitiems mokytis programavimo</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="question">
-                        <div class="label">Kokia tavo pažanga programavime?</div>
-                        <div class="radio-list">
-                            <div class="option">
-                                <input type="radio" name="goal" id="goal-begin">
-                                <label for="goal-begin">Mokytis programavimo</label>
-                            </div>
-                            <div class="option">
-                                <input type="radio" name="goal" id="goal-teach">
-                                <label for="goal-teach">Padėti kitiems mokytis programavimo</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="question">
-                        <label class="label">Ar turi Github paskyrą?</label>
-                        <input id="github-username" type="text">
-                        <div class="comment">Jei taip - įrašyk pilną nuorodą į savo Github paskyrą. Pvz.: https://github.com/slapyvardis</div>
-                    </div>
-                    <div class="question">
-                        <label class="label">Ar turi Linkedin paskyrą?</label>
-                        <input id="linkedin-username" type="text">
-                        <div class="comment">Jei taip - įrašyk pilną nuorodą į savo Linkedin paskyrą. Pvz.: https://www.linkedin.com/in/vardenispavardenis/</div>
-                    </div>
+            <div class="title">Pagrindiniai klausimai</div>
+            <div class="questions">
+                <div class="question">
+                    <label for="name" class="label">Kuo vardu?</label>
+                    <input id="name" type="text">
+                    <div class="comment">Tikras tavo vardas. Pavardė neprivaloma.</div>
+                </div>
+                <div class="question">
+                    <label for="reasom" class="label">Koks tavo tikslas?</label>
+                    <textarea id="reasom"></textarea>
+                    <div class="comment">Mokytis? Mokyti? Samdyti? Šiaip apsižvalgyti?</div>
+                </div>
+                <div class="question">
+                    <label for="level" class="label">Koks tavo lygis?</label>
+                    <textarea id="level"></textarea>
+                    <div class="comment">Tame ką moki arba nori mokytis (priklauso nuo išsakyto tikslo).</div>
+                </div>
+                <div class="question">
+                    <label for="github" class="label">Kokia tavo Github paskyros nuoroda?</label>
+                    <input id="github" type="text" placeholder="https://github.com/slapyvardis">
+                    <div class="comment">Neturi? - susikurk <a href="https://github.com/signup" target="_blank">https://github.com/signup</a></div>
+                    <div class="comment">Turi? - įrašyk pilną nuorodą į savo Github paskyrą.</div>
+                </div>
+                <div class="question">
+                    <label for="linkedin" class="label">Kokia tavo Linkedin paskyros nuoroda?</label>
+                    <input id="linkedin" type="text" placeholder="https://www.linkedin.com/in/vardenispavardenis">
+                    <div class="comment">Neturi? - susikurk <a href="https://www.linkedin.com/signup" target="_blank">https://www.linkedin.com/signup</a></div>
+                    <div class="comment">Turi? - įrašyk pilną nuorodą į savo Linkedin paskyrą.</div>
+                </div>
+                <div class="question">
+                    <label class="label">Ar turi Discord paskyrą?</label>
+                    <div class="comment">Neturi? - susikurk <a href="https://discord.com/register" target="_blank">https://discord.com/register</a></div>
+                    <div class="comment">Turi? - puiku! Tęsiam!</div>
+                </div>
+                <div class="continue">
+                    <button id="submit" class="btn">Tęsti</button>
+                    <div class="comment">Panašu, jog formoje yra klaidų... 😬</div>
                 </div>
             </div>
         </div>
