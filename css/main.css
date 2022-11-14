@@ -55,11 +55,47 @@ body[data-theme='dark'] {
     color: #36f;
 }
 
+.content.hide {
+    display: none;
+}
+
 .main-title {
     font-size: 60px;
 }
-.main-title > .server-name {
+.server-name {
     font-weight: bold;
+}
+
+.description {
+    font-size: 22px;
+    line-height: 1.2em;
+}
+.description > .discord-channel {
+    padding: 0 0.5em;
+    font-family: monospace;
+    font-size: 18px;
+    line-height: inherit;
+    background-color: #36f;
+    color: #fff;
+}
+
+.hi {
+    font-size: 22px;
+    padding: 1em;
+    border: 0.2em dotted var(--grey-color);
+}
+.discord {
+    font-size: 22px;
+}
+.discord > .link {
+    display: block;
+    margin-top: 0.2em;
+    padding: 0.2em 0.5em;
+    text-align: center;
+    font-size: 40px;
+    background-color: #36f;
+    color: #fff;
+    border-radius: 0.1em;
 }
 
 .top {
@@ -106,6 +142,18 @@ body[data-theme='dark'] {
 }
 .question > .label {
     font-size: 32px;
+}
+.question > .err {
+    display: none;
+    font-size: 18px;
+    color: red;
+}
+.question > .err::before {
+    content: '⛔';
+    margin-right: 0.5em;
+}
+.question > .err.show {
+    display: block;
 }
 .question > input,
 .question > textarea {
@@ -172,5 +220,22 @@ body[data-theme='dark'] {
     }
     .right {
         width: calc(100% - 500px);
+    }
+}
+
+@media (max-width: 1100px) {
+    .left {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 30px;
+    }
+    .right {
+        width: 100%;
+        padding: 30px 30px 240px;
+    }
+
+    .main-title {
+        font-size: clamp(36px, 10vw, 60px);
     }
 }
