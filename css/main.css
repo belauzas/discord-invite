@@ -67,6 +67,8 @@ body[data-theme='dark'] {
 }
 
 .description {
+    display: grid;
+    gap: 1em;
     font-size: 22px;
     line-height: 1.2em;
 }
