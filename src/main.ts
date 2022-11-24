@@ -178,7 +178,7 @@ function validFormReason(): boolean {
     return true;
 }
 
-function validFromLevel() {
+function validFormLevel() {
     levelErrDOM.classList.remove('show');
     const [levelValid, levelMsg] = validReasonLevel(levelDOM.value);
     if (!levelValid) {
@@ -218,7 +218,7 @@ function validateForm() {
 
     if (!validFormName()) errorCount++;
     if (!validFormReason()) errorCount++;
-    if (!validFromLevel()) errorCount++;
+    if (!validFormLevel()) errorCount++;
     if (!validFormGithub()) errorCount++;
     if (!validFormLinkedin()) errorCount++;
 
@@ -245,7 +245,7 @@ function validateForm() {
 
 nameDOM.addEventListener('focusout', validFormName);
 reasonDOM.addEventListener('focusout', validFormReason);
-levelDOM.addEventListener('focusout', validFromLevel);
+levelDOM.addEventListener('focusout', validFormLevel);
 githubDOM.addEventListener('focusout', validFormGithub);
 linkedinDOM.addEventListener('focusout', validFormLinkedin);
 submitDOM.addEventListener('click', validateForm);
