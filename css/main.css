@@ -72,6 +72,25 @@ body[data-theme='dark'] {
     font-size: 22px;
     line-height: 1.2em;
 }
+ul.description {
+    max-width: 800px;
+    list-style: none;
+}
+ul.description > li {
+    display: flex;
+    gap: 1em;
+    align-items: flex-start;
+}
+ul.description > li > .number {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #36f;
+    color: #fff;
+    padding: 0.1em 0.4em;
+    border: 2px solid #000;
+}
+ul.description > li > p {
+    padding: 0.2em 0;
+}
 .result-description {
     font-size: 22px;
     line-height: 1.2em;
