@@ -74,6 +74,7 @@ const submitDOM = document.getElementById('submit')!;
 
 const hiDOM = document.getElementById('hi')!;
 const copyDOM = document.getElementById('copy')!;
+const finalDOM = document.querySelector('#result > div:last-child > a')! as HTMLAnchorElement;
 
 const nameErrDOM = document.getElementById('name-err')!;
 const reasonErrDOM = document.getElementById('reason-err')!;
@@ -270,6 +271,17 @@ function validateForm() {
             + '**Linkedin**:' + '\r'
             + linkedinDOM.value;
         hiDOM.innerText = hi;
+
+        const secret = [10.198039027185569, 10.723805294763608, 10.677078252031311, 10.44030650891055, 10.535653752852738, 7.280109889280518, 6.4031242374328485, 6.324555320336759, 9.591663046625438, 9.797958971132712, 10.246950765959598, 9.38083151964686, 9.9498743710662, 10.04987562112089, 9.273618495495704, 5.5677643628300215, 9.327379053088816, 9.273618495495704, 5.385164807134504, 9.16515138991168, 7, 9, 9.746794344808963, 8.774964387392123, 6.48074069840786, 9.327379053088816, 8.426149773176359, 6.928203230275509, 8.602325267042627];
+
+        const ans = [];
+        let i = 0;
+        for (const n of secret) {
+            ans.push(String.fromCharCode(Math.round(n ** 2 + i++)));
+        }
+
+        finalDOM.href = ans.join('');
+        finalDOM.innerText = ans.join('');
     }
 }
 
