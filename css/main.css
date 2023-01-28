@@ -55,8 +55,8 @@ body[data-theme='dark'] {
     color: #36f;
 }
 
-.content.hide {
-    display: none;
+.hide {
+    display: none !important;
 }
 
 .main-title {
@@ -108,6 +108,23 @@ ul.description > li > p {
     font-size: 22px;
     padding: 1em;
     border: 0.2em dotted var(--grey-color);
+    position: relative;
+}
+.hi > .copy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    line-height: 1em;
+    padding: 0.2em 0.5em;
+    background-color: #36f;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.5;
+}
+.hi:hover > .copy {
+    opacity: 1;
 }
 .discord {
     font-size: 22px;

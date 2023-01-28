@@ -56,18 +56,36 @@ const linkedinDOM = document.getElementById('linkedin');
 const continueDOM = document.getElementById('continue');
 const submitDOM = document.getElementById('submit');
 const hiDOM = document.getElementById('hi');
+const copyDOM = document.getElementById('copy');
 const nameErrDOM = document.getElementById('name-err');
 const reasonErrDOM = document.getElementById('reason-err');
 const levelErrDOM = document.getElementById('level-err');
 const githubErrDOM = document.getElementById('github-err');
 const linkedinErrDOM = document.getElementById('linkedin-err');
 const abc = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZąčęėįšųūžĄČĘĖĮŠŲŪŽ';
-if (introContinueDOM) {
-    introContinueDOM.addEventListener('click', () => {
-        introDOM.classList.add('hide');
-        contentDOM.classList.remove('hide');
-        scrollTo({ top: 0, behavior: 'smooth' });
+function switchContent(fromDOM, toDOM) {
+    fromDOM.classList.add('hide');
+    toDOM.classList.remove('hide');
+    scrollTo({ top: 0, behavior: 'smooth' });
+}
+introContinueDOM.addEventListener('click', () => {
+    switchContent(introDOM, contentDOM);
+});
+if (navigator.clipboard) {
+    copyDOM.addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText(hiDOM.innerText);
+            copyDOM.innerText = '✅ Copy';
+            setTimeout(() => {
+                copyDOM.innerText = 'Copy';
+            }, 1000);
+        }
+        catch (error) {
+        }
     });
+}
+else {
+    copyDOM.classList.add('hide');
 }
 function validSingleName(str, sentence = 'Vardas') {
     const min = 3;
@@ -203,9 +221,7 @@ function validateForm() {
         }, 2000);
     }
     else {
-        contentDOM.classList.toggle('hide');
-        resultDOM.classList.toggle('hide');
-        scrollTo({ top: 0, behavior: 'smooth' });
+        switchContent(contentDOM, resultDOM);
         const hi = 'Sveiki, mano vardas ' + nameDOM.value + '\r'
             + '**Mano tikslas**:' + '\r'
             + reasonDOM.value + '\r'
