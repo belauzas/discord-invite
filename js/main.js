@@ -44,6 +44,8 @@ for (const themeOptionDOM of themeOptionsDOM) {
         updateTheme(themeDOM, themeOptionDOM.dataset.theme);
     });
 }
+const introDOM = document.getElementById('intro');
+const introContinueDOM = document.getElementById('intro_continue');
 const contentDOM = document.getElementById('content');
 const resultDOM = document.getElementById('result');
 const nameDOM = document.getElementById('name');
@@ -60,6 +62,13 @@ const levelErrDOM = document.getElementById('level-err');
 const githubErrDOM = document.getElementById('github-err');
 const linkedinErrDOM = document.getElementById('linkedin-err');
 const abc = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZąčęėįšųūžĄČĘĖĮŠŲŪŽ';
+if (introContinueDOM) {
+    introContinueDOM.addEventListener('click', () => {
+        introDOM.classList.add('hide');
+        contentDOM.classList.remove('hide');
+        scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
 function validSingleName(str, sentence = 'Vardas') {
     const min = 3;
     const max = 30;
@@ -196,6 +205,7 @@ function validateForm() {
     else {
         contentDOM.classList.toggle('hide');
         resultDOM.classList.toggle('hide');
+        scrollTo({ top: 0, behavior: 'smooth' });
         const hi = 'Sveiki, mano vardas ' + nameDOM.value + '\r'
             + '**Mano tikslas**:' + '\r'
             + reasonDOM.value + '\r'

@@ -59,6 +59,9 @@ for (const themeOptionDOM of themeOptionsDOM) {
     })
 }
 
+const introDOM = document.getElementById('intro')!;
+const introContinueDOM = document.getElementById('intro_continue')!;
+
 const contentDOM = document.getElementById('content')!;
 const resultDOM = document.getElementById('result')!;
 const nameDOM = document.getElementById('name')! as HTMLInputElement;
@@ -70,13 +73,21 @@ const continueDOM = document.getElementById('continue')!;
 const submitDOM = document.getElementById('submit')!;
 const hiDOM = document.getElementById('hi')!;
 
-const nameErrDOM = document.getElementById('name-err')! as HTMLElement;
-const reasonErrDOM = document.getElementById('reason-err')! as HTMLElement;
-const levelErrDOM = document.getElementById('level-err')! as HTMLElement;
-const githubErrDOM = document.getElementById('github-err')! as HTMLElement;
-const linkedinErrDOM = document.getElementById('linkedin-err')! as HTMLElement;
+const nameErrDOM = document.getElementById('name-err')!;
+const reasonErrDOM = document.getElementById('reason-err')!;
+const levelErrDOM = document.getElementById('level-err')!;
+const githubErrDOM = document.getElementById('github-err')!;
+const linkedinErrDOM = document.getElementById('linkedin-err')!;
 
 const abc = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZąčęėįšųūžĄČĘĖĮŠŲŪŽ';
+
+if (introContinueDOM) {
+    introContinueDOM.addEventListener('click', () => {
+        introDOM.classList.add('hide');
+        contentDOM.classList.remove('hide');
+        scrollTo({ top: 0, behavior: 'smooth' });
+    })
+}
 
 function validSingleName(str: string, sentence = 'Vardas'): [boolean, string] {
     const min = 3;
@@ -230,6 +241,8 @@ function validateForm() {
     } else {
         contentDOM.classList.toggle('hide');
         resultDOM.classList.toggle('hide');
+        scrollTo({ top: 0, behavior: 'smooth' });
+
         const hi = 'Sveiki, mano vardas ' + nameDOM.value + '\r'
             + '**Mano tikslas**:' + '\r'
             + reasonDOM.value + '\r'
